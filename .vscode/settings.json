@@ -1,0 +1,28 @@
+{
+    "workbench.colorCustomizations": {
+        "editorRuler.foreground": "#004444"
+    },
+    "[python]": {
+        "editor.rulers": [
+            129
+        ]
+    },
+    "editor.formatOnSave": true,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.terminal.activateEnvironment": true,
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true
+    },
+    "markdownlint.config": {
+        "MD040": false
+    },
+    "ruff.organizeImports": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+    },
+    "mypy-type-checker.importStrategy": "fromEnvironment",
+    "mypy-type-checker.preferDaemon": false,
+    "python.languageServer": "Pylance"
+}
