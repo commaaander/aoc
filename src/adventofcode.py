@@ -5,6 +5,7 @@ import logging
 import os
 import re
 import sys
+import time
 from io import TextIOWrapper
 from pathlib import Path
 
@@ -46,13 +47,17 @@ def main():
         LOG.error(f"Module for year {cmdl_args.year} day {cmdl_args.day:02d} not found: {e}")
         sys.exit(1)
 
+    start_time = time.time()
     if cmdl_args.part in ("1", "all"):
         question, answer = d.part_one(raw_data=raw_data, use_tui=cmdl_args.tui, test_mode=cmdl_args.test)
-        print(f"[yellow]Solution part one:[/yellow]\n{question} {answer}")
+        elapsed_time = time.time() - start_time
+        print(f"[yellow]Solution part one after {elapsed_time:.4f}s:[/yellow]\n{question} {answer}")
 
+    start_time = time.time()
     if cmdl_args.part in ("2", "all"):
         question, answer = d.part_two(raw_data=raw_data, use_tui=cmdl_args.tui, test_mode=cmdl_args.test)
-        print(f"[yellow]Solution part two:[/yellow]\n{question} {answer}")
+        elapsed_time = time.time() - start_time
+        print(f"[yellow]Solution part two after {elapsed_time:.4f}s:[/yellow]\n{question} {answer}")
 
     return
 
