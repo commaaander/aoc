@@ -16,8 +16,7 @@ def part_one(raw_data: str, **kwargs: Dict[str, Any]) -> Tuple[str, int]:
     LOG.debug(f"part_one({raw_data=}, {kwargs=})")
     answer: int = 0
 
-    search_string = raw_data.replace("\n", "")
-    matches = re.findall(r"mul\((\d+),(\d+)\)", search_string)
+    matches = re.findall(r"mul\((\d+),(\d+)\)", raw_data)
     answer = sum(int(i) * int(j) for i, j in matches)
     LOG.debug(f"{matches=}")
 

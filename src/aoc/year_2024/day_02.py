@@ -4,10 +4,7 @@ from typing import Any, Dict, List, Tuple
 
 from adventofcode import LOG
 
-questions: List[str] = [
-    "",  # noqa: E501
-    "",  # noqa: E501
-]
+questions: List[str] = ["How many reports are safe?", "How many reports are now safe?"]
 
 
 def part_one(raw_data: str, **kwargs: Dict[str, Any]) -> Tuple[str, int]:
@@ -31,10 +28,7 @@ def part_two(raw_data: str, **kwargs: Dict[str, Any]) -> Tuple[str, int]:
 
 
 def _parse_raw_data(raw_data: str) -> List[List[int]]:
-    parsed_data: List[List[int]] = []
-    for report in raw_data.split("\n"):
-        parsed_data.append([int(level) for level in report.split()])
-    return parsed_data
+    return [[int(level) for level in report.split()] for report in raw_data.split("\n")]
 
 
 def _report_is_safe(report: List[int], use_problem_dampener: bool = False) -> bool:

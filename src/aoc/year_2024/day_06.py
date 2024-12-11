@@ -74,9 +74,11 @@ def part_two(raw_data: str, **kwargs: Dict[str, Any]) -> Tuple[str, int]:
                         guardian_path[(x, y)] = guardian_direction
 
                 if guardian_path.get((x + dx, y + dy), "") == guardian_direction:
-                    _draw_map(map, guardian_path, map_width, map_heigth)
+                    # _draw_map(map, guardian_path, map_width, map_heigth)
                     answer += 1
-                    LOG.debug(f"Loop detected mit additional obstacle @({(col,row)})")
+                    LOG.debug(
+                        f"Loop #{answer:04d} detected mit additional obstacle @{(col,row)} with pathlength of {len(guardian_path)}"
+                    )
 
     return questions[1], answer
 
