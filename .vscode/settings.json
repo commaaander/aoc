@@ -22,7 +22,4 @@
     "editor.codeActionsOnSave": {
         "source.organizeImports": "explicit"
     },
-    "mypy-type-checker.importStrategy": "fromEnvironment",
-    "mypy-type-checker.preferDaemon": false,
-    "python.languageServer": "Pylance"
 }
